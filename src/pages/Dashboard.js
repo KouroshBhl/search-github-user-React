@@ -1,7 +1,16 @@
 import React from 'react'
+import { Info, Navbar, Repos, Search, User } from '../components'
 
 const Dashboard = () => {
-  return <div>Dashboard</div>
+  return (
+    <div>
+      <Search />
+      <Navbar />
+      <Info />
+      <User />
+      <Repos />
+    </div>
+  )
 }
 
 export default Dashboard

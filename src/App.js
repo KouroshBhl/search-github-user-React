@@ -1,5 +1,5 @@
 import './App.css'
-import { Hero, Dashboard, Login, Error } from './pages'
+import { Dashboard, Login, Error } from './pages'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
