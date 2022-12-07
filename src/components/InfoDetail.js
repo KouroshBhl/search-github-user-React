@@ -1,12 +1,11 @@
 import React from 'react'
-import { GoRepoClone } from 'react-icons/go'
 
 const InfoDetail = ({ type, icon, value }) => {
   return (
-    <div className='bg-gray-800 flex justify-center items-center gap-4 rounded-xl px-8 py-4'>
-      {icon}
-      <div className='flex flex-col'>
-        <span>{value}</span>
+    <div className='bg-gray-800 flex  items-center gap-8 rounded-xl px-5 py-5 mb-4 md:mb-0 w-full justify-around'>
+      <div className='bg-gray-700 p-3 rounded-full'>{icon}</div>
+      <div className='flex flex-col gap-2'>
+        <span className='text-2xl font-bold'>{value}</span>
         <span>{type}</span>
       </div>
     </div>

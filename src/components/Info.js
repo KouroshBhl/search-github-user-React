@@ -12,31 +12,31 @@ const Info = () => {
     {
       id: '1',
       type: 'Repos',
-      icon: <GoRepoClone className='h-10 w-10' />,
+      icon: <GoRepoClone className='h-8 w-8 ' />,
       value: repo,
     },
     {
       id: '2',
       type: 'Followers',
-      icon: <RiUserFollowFill className='h-10 w-10' />,
+      icon: <RiUserFollowFill className='h-8 w-8' />,
       value: followers,
     },
     {
       id: '3',
       type: 'Following',
-      icon: <RiUserUnfollowFill className='h-10 w-10' />,
+      icon: <RiUserUnfollowFill className='h-8 w-8' />,
       value: following,
     },
     {
       id: '4',
       type: 'Gists',
-      icon: <SiGitlfs className='h-10 w-10' />,
+      icon: <SiGitlfs className='h-8 w-8' />,
       value: gist,
     },
   ]
 
   return (
-    <section className='flex w-full justify-between'>
+    <section className='flex max-w-full justify-between flex-col md:flex-row mx-10 md:mx-0 gap-4 md:gap-8'>
       {dataInfo.map((item) => {
         return <InfoDetail key={item.id} {...item} />
       })}
