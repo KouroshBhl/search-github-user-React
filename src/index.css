@@ -13,3 +13,13 @@
     @apply before:absolute before:bg-gray-800 content-none before:block before:text-lg before:h-7 before:w-2/5 xl:before:w-1/5 before:top-0 before:-translate-y-[100%] before:left-0 before:text-center before:rounded-t before:font-Inconsolata before:tracking-wider;
   }
 }
+.fusioncharts-container svg {
+  width: 100% !important;
+  border-radius: 0.5rem;
+}
+.fusioncharts-container {
+  width: 100% !important;
+}
+.responsive-chart div {
+  width: 100% !important;
+}

@@ -8,7 +8,6 @@ import { BsTwitter } from 'react-icons/bs'
 
 const User = () => {
   const { users } = useGlobalContext()
-  console.log(users)
   const {
     bio,
     avatar_url: avatar,
@@ -23,13 +22,13 @@ const User = () => {
 
   return (
     <Card>
-      <section className='flex justify-between items-start before-custom before:content-["User"]'>
+      <section className='w-full flex justify-between items-start before-custom before:content-["User"]'>
         <div>
           {/* Content */}
           <div className='flex gap-4 mb-4'>
             <img src={avatar} alt='profile' className='h-20 rounded-full' />
             <div className='flex flex-col  gap-2'>
-              <h3 className='text-xl'>{name}</h3>
+              <h3 className='text-md sm:text-lg'>{name}</h3>
               <a
                 href={url}
                 className='text-gray-300 text-sm hover:text-amber-400 transition-all'
@@ -78,7 +77,7 @@ const User = () => {
             </div>
           )}
         </div>
-        <button className='bg-gray-700 px-4 py-2 rounded-lg border border-gray-400 hover:bg-amber-500  hover:-translate-y-0.5 transition-all duration-200'>
+        <button className='bg-gray-700 px-2 py-1 sm:px-4 sm:py-2 rounded-lg border border-gray-400 hover:bg-amber-500  hover:-translate-y-0.5 transition-all duration-200'>
           <a href={url}>Follow</a>
         </button>
       </section>

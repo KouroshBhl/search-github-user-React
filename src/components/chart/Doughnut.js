@@ -12,14 +12,14 @@ import FusionCharts from 'fusioncharts'
 import Column2D from 'fusioncharts/fusioncharts.charts'
 
 // Include the theme as fusion
-import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion'
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy'
 
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme)
 
 const Chart = function ({ chartData }) {
   const chartConfigs = {
-    type: 'pie3d', // The chart type
+    type: 'doughnut2d', // The chart type
     width: '100%', // Width of the chart
     height: '400', // Height of the chart
     dataFormat: 'json', // Data type
@@ -27,13 +27,14 @@ const Chart = function ({ chartData }) {
     dataSource: {
       // Chart Configuration
       chart: {
-        caption: 'Languages',
-        theme: 'fusion',
+        caption: 'Start Per Languages',
+        theme: 'candy',
         decimals: 1,
         bgColor: '#1f2937',
         labelFontColor: '#fff',
         labelFontBold: 1,
         captionFontColor: '#fff',
+        showPercentValues: 0,
       },
       // Chart Data
       data: chartData,
