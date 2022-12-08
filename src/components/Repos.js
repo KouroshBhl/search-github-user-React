@@ -5,28 +5,22 @@ import Chart from './chart/Pie3d'
 const Repos = () => {
   const { repos } = useGlobalContext()
 
-  const chartData = [
-    {
-      label: 'HTML',
-      value: '290',
-    },
-    {
-      label: 'CSS',
-      value: '260',
-    },
-    {
-      label: 'JS',
-      value: '180',
-    },
-    {
-      label: 'TS',
-      value: '140',
-    },
-  ]
-  console.log(repos)
+  let languages = repos.reduce((total, item) => {
+    const { language } = item
+    if (!language) return total
+    if (!total[language]) total[language] = { label: language, value: 1 }
+    else {
+      total[language] = { ...total[language], value: total[language].value + 1 }
+    }
+    return total
+  }, {})
+  languages = Object.values(languages)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 5)
+
   return (
     <div>
-      <Chart chartData={chartData} />
+      <Chart chartData={languages} />
     </div>
   )
 }
