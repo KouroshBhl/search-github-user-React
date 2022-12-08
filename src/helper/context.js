@@ -1,6 +1,11 @@
 import React, { useReducer, useContext, useEffect } from 'react'
 import { initalState, reducer } from './reducer'
-import { ENDPOINT_API, RATE_LIMIT } from '../helper/config'
+import {
+  ENDPOINT_API,
+  RATE_LIMIT,
+  GET_USER,
+  DEFAULT_USER,
+} from '../helper/config'
 import { timeOut } from './axios'
 import axios from 'axios'
 import { TIMEOUT_SEC } from '../helper/config'
@@ -23,6 +28,10 @@ const ContextAPI = function ({ children }) {
   useEffect(() => {
     getData('RATE_LIMIT', `${ENDPOINT_API}${RATE_LIMIT}`)
   }, [])
+
+  useEffect(() => {
+    getData('GET_USER', `${ENDPOINT_API}${GET_USER}${state.getUser}`)
+  }, [state.getUser])
 
   return (
     <Context.Provider value={{ dispatch, ...state }}>
