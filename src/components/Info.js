@@ -36,7 +36,7 @@ const Info = () => {
   ]
 
   return (
-    <section className='flex max-w-full justify-between flex-col md:flex-row mx-10 md:mx-0 gap-4 md:gap-8'>
+    <section className='grid grid-cols-2 md:flex max-w-full md:justify-between  md:flex-row gap-4 md:gap-8'>
       {dataInfo.map((item) => {
         return <InfoDetail key={item.id} {...item} />
       })}

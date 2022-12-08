@@ -1,15 +1,18 @@
 import React from 'react'
-import { Info, Navbar, Repos, Search, User } from '../components'
+import { Info, Navbar, Repos, Search, User, Followers } from '../components'
 import { useGlobalContext } from '../helper/context'
 
 const Dashboard = () => {
   return (
-    <main className='h-screen bg-gray-900 text-gray-100'>
-      <div className='flex flex-col max-w-7xl mx-auto'>
-        <Search />
-        <Navbar />
+    <main className='h-screen bg-gray-900 text-gray-100 py-20 px-10 md:mx-0'>
+      <div className='flex flex-col max-w-7xl mx-auto gap-10'>
+        {/* <Search /> */}
+        {/* <Navbar /> */}
         <Info />
-        <User />
+        <div className='flex flex-col md:flex-row justify-between'>
+          <User />
+          <Followers />
+        </div>
         <Repos />
       </div>
     </main>
