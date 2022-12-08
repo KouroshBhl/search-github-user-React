@@ -71,7 +71,7 @@ const User = () => {
                 href={blog}
                 target='_blank'
                 rel='noreferrer'
-                className='hover:text-amber-400 transition-all'
+                className='hover:text-amber-400 transition-all text-cyan-500'
               >
                 {blog}
               </a>

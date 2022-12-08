@@ -4,12 +4,12 @@ import { useGlobalContext } from '../helper/context'
 
 const Dashboard = () => {
   return (
-    <main className='h-screen bg-gray-900 text-gray-100 py-20 px-10 md:mx-0'>
+    <main className='min-h-screen bg-gray-900 text-gray-100 py-20 px-10 md:mx-0'>
       <div className='flex flex-col max-w-7xl mx-auto gap-10'>
         {/* <Search /> */}
         {/* <Navbar /> */}
         <Info />
-        <div className='flex flex-col md:flex-row justify-between'>
+        <div className='flex flex-col md:flex-row justify-between gap-10 '>
           <User />
           <Followers />
         </div>
