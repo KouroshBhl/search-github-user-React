@@ -4,7 +4,7 @@ import { useGlobalContext } from '../helper/context'
 import ErrMessage from './ErrMessage'
 
 const Search = () => {
-  const { dispatch, error } = useGlobalContext()
+  const { dispatch, error, rateLimit } = useGlobalContext()
   const [input, setInput] = useState('')
 
   const formSubmitHandler = function (e) {
@@ -28,7 +28,9 @@ const Search = () => {
           <BiSearch className='w-6 h-6' />
         </button>
       </div>
-      <h3>Requsts: 60/60</h3>
+      <h3>
+        Requsts: {rateLimit.remaining} / {rateLimit.limit}
+      </h3>
     </div>
   )
 }

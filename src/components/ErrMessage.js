@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../helper/context'
+import { ERROR_MSG_DURATION } from '../helper/config'
 
 const ErrMessage = () => {
   const { error, dispatch } = useGlobalContext()
@@ -7,7 +8,7 @@ const ErrMessage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       dispatch({ type: 'REMOVE_ERROR' })
-    }, 2000)
+    }, ERROR_MSG_DURATION * 1000)
 
     return () => clearTimeout(timer)
   }, [dispatch])

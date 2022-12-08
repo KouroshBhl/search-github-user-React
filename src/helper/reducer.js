@@ -17,6 +17,10 @@ const reducer = function (state, action) {
     case 'REMOVE_ERROR':
       return { ...state, error: { show: false } }
 
+    case 'RATE_LIMIT':
+      const { limit, remaining, reset } = action.payload.rate
+      return { ...state, rateLimit: { limit, remaining, reset } }
+
     default:
       return state
   }
@@ -28,6 +32,7 @@ const initalState = {
   repos,
   searchQuery: '',
   error: { show: false, type: '', message: '' },
+  rateLimit: { limit: 0, remaining: 0, reset: 0 },
 }
 
 export { reducer, initalState }
