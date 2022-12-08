@@ -6,7 +6,7 @@ const Followers = () => {
   const { followers } = useGlobalContext()
   return (
     <Card>
-      <div className='h-[270px] overflow-y-scroll'>
+      <div className='h-[270px] overflow-y-scroll overflow-bg-gray-400 before-custom before:content-["Followers"]'>
         {followers.map((person) => {
           const { id, avatar_url: img, login, html_url: url } = person
 

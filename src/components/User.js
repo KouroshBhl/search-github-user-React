@@ -23,7 +23,7 @@ const User = () => {
 
   return (
     <Card>
-      <section className='flex justify-between items-start'>
+      <section className='flex justify-between items-start before-custom before:content-["User"]'>
         <div>
           {/* Content */}
           <div className='flex gap-4 mb-4'>
