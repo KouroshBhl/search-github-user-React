@@ -1,5 +1,7 @@
 import React from 'react'
 import { Info, Navbar, Repos, Search, User, Followers } from '../components'
+import ReactDOM from 'react-dom'
+
 import { useGlobalContext } from '../helper/context'
 
 const Dashboard = () => {
