@@ -23,7 +23,19 @@ const Repos = () => {
     return total
   }, {})
 
-  console.log(languages)
+  let { stars, forks } = repos.reduce(
+    (total, item) => {
+      const { stargazers_count, name, forks } = item
+      total.stars[stargazers_count] = { label: name, value: stargazers_count }
+      total.forks[stargazers_count] = { label: name, value: forks }
+      return total
+    },
+    { stars: {}, forks: {} }
+  )
+
+  stars = Object.values(stars).slice(-5).reverse()
+  forks = Object.values(forks).slice(-5).reverse()
+  console.log(forks)
 
   const mostLanguages = Object.values(languages)
     .sort((a, b) => b.value - a.value)
@@ -42,8 +54,8 @@ const Repos = () => {
         <Doughnut chartData={mostStars} />
       </div>
       <div className='flex flex-col lg:flex-row justify-center gap-10 w-full responsive-chart'>
-        <Column3d chartData={mostLanguages} />
-        <Bar3d chartData={mostStars} />
+        <Column3d chartData={stars} />
+        <Bar3d chartData={forks} />
       </div>
     </div>
   )

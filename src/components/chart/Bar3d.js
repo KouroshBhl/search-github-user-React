@@ -27,7 +27,7 @@ const Chart = function ({ chartData }) {
     dataSource: {
       // Chart Configuration
       chart: {
-        caption: 'Languages',
+        caption: 'Forks',
         theme: 'fusion',
         decimals: 1,
         bgColor: '#1f2937',
