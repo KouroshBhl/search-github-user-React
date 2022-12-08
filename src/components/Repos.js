@@ -2,6 +2,8 @@ import React from 'react'
 import { useGlobalContext } from '../helper/context'
 import Chart from './chart/Pie3d'
 import Doughnut from './chart/Doughnut'
+import Column3d from './chart/Column3d'
+import Bar3d from './chart/Bar3d'
 
 const Repos = () => {
   const { repos } = useGlobalContext()
@@ -35,9 +37,13 @@ const Repos = () => {
     .slice(0, 5)
   return (
     <div className='flex flex-col w-full'>
-      <div className='flex flex-col lg:flex-row justify-center gap-10 w-full responsive-chart'>
+      <div className='flex flex-col lg:flex-row justify-center gap-10 w-full responsive-chart mb-10'>
         <Chart chartData={mostLanguages} />
         <Doughnut chartData={mostStars} />
+      </div>
+      <div className='flex flex-col lg:flex-row justify-center gap-10 w-full responsive-chart'>
+        <Column3d chartData={mostLanguages} />
+        <Bar3d chartData={mostStars} />
       </div>
     </div>
   )
