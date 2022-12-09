@@ -11,8 +11,8 @@ const Info = () => {
   const dataInfo = [
     {
       id: '1',
-      type: 'Repos',
-      icon: <GoRepoClone className='h-8 w-8 ' />,
+      type: 'Reposotories',
+      icon: <GoRepoClone className='h-8 w-8' />,
       value: repo,
     },
     {
