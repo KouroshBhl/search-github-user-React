@@ -14,7 +14,6 @@ const ContextAPI = function ({ children }) {
     dispatch({ type: 'LOADING' })
     try {
       const data = await Promise.race([axios(url), timeOut(TIMEOUT_SEC)])
-      console.log(data)
       dispatch({ type, payload: data.data })
     } catch (error) {
       dispatch({ type: 'ERROR', payload: error.response.status })

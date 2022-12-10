@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils'
 import { users, followers, repos } from '../data'
 import { DEFAULT_USER } from '../helper/config'
 
@@ -32,7 +31,6 @@ const reducer = function (state, action) {
       }
 
     case 'GET_USER':
-      const { followers_url, repos_url } = action.payload
       return {
         ...state,
         users: action.payload,

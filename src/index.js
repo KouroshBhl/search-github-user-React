@@ -4,13 +4,21 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { ContextAPI } from './helper/context'
+import { Auth0Provider } from '@auth0/auth0-react'
+import { eventNames } from 'npm'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <ContextAPI>
-      <App />
-    </ContextAPI>
+    <Auth0Provider
+      domain={process.env.REACT_APP_AUTH_DOMAIN}
+      clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
+      redirectUri={window.location.origin}
+    >
+      <ContextAPI>
+        <App />
+      </ContextAPI>
+    </Auth0Provider>
   </React.StrictMode>
 )
 
