@@ -77,7 +77,7 @@ const User = () => {
             </div>
           )}
         </div>
-        <button className='bg-gray-700 px-2 py-1 sm:px-4 sm:py-2 rounded-lg border border-gray-400 hover:bg-amber-500  hover:-translate-y-0.5 transition-all duration-200'>
+        <button className='btn'>
           <a href={url}>Follow</a>
         </button>
       </section>
