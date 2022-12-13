@@ -4,7 +4,6 @@ import { useAuth0 } from '@auth0/auth0-react'
 const Navbar = () => {
   const { user, logout } = useAuth0()
 
-  console.log(user)
   return (
     <div className='bg-gray-800 text-center py-4 rounded-lg'>
       <div className='flex justify-around '>
